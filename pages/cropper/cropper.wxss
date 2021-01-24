@@ -1,0 +1,50 @@
+.top {
+  position: absolute;
+  width: 100%;
+  top: 10rpx;
+  display: flex;
+  flex-flow: wrap;
+  z-index: 10;
+  color: white;
+  justify-content: space-around;
+}
+
+.hint {
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+  letter-spacing: 3rpx;
+}
+
+page {
+  background: rgb(14, 13, 13);
+}
+
+view {
+  font-size: 30rpx;
+}
+
+/* 裁剪框按钮 */
+
+.bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 50rpx;
+  display: flex;
+  z-index: 10;
+  justify-content: space-around;
+}
+.button {
+  width: 210rpx;
+  font-size: 28rpx;
+  background-color: #d7e362;
+  color: #11506e;
+  font-weight: bold;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}

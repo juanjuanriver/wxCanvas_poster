@@ -1,0 +1,7 @@
+<image-cropper id="image-cropper" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" limit_move="{{limit_move}}"  width="{{width}}" height="{{height}}"  imgSrc="{{src}}">
+</image-cropper>
+<text class="hint">点击中间裁剪框可预览</text>
+<view class='bottom'>
+ <view class="button" bindtap='upload'>重选</view>
+  <view class="button" bindtap='submit'>确定</view>
+</view>

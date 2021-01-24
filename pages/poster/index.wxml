@@ -1,0 +1,37 @@
+<view>
+  <!-- 拖动区域 -->
+  <view id="box" style="width:{{width}}px;height:{{height}}px" bindtap="removeIcon">
+    <!-- 海报 -->
+    <image id="imgView" src="{{posterBg}}" mode="widthFix"></image>
+    <view class='contentWarp'>
+      <block wx:for="{{itemList}}" wx:key="id">
+        <view class='touchWrap' style='transform: scale({{item.scale}});top:{{item.top}}px;left:{{item.left}}px; z-index:{{item.active?100:1}}'>
+          <view class='imgWrap {{item.active? "touchActive":""}}' style="transform: rotate({{item.angle}}deg); border: {{item.active?4*item.oScale:0}}rpx #fff solid;">
+            <!-- 编辑的图片 -->
+            <image src='{{item.image}}' catchtap="WraptouchStart" data-id='{{item.id}}' style='width:{{item.width}}px;height:{{item.height}}px;' bindtouchstart='WraptouchStart' bindtouchmove='WraptouchMove' bindtouchend='WraptouchEnd' mode="widthFix"></image>
+            <!-- 删除图标 -->
+            <image class='x' src='/images/x.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtap='deleteItem'></image>
+            <!-- 缩放图标 -->
+            <image class='o' src='/images/o.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtouchstart='oTouchStart' bindtouchmove='oTouchMove' bindtouchend='WraptouchEnd'></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 右下角操作按钮 -->
+  <view class="btnsBox">
+    <view class="button" bindtap="uploadImg">上传图标</view>
+    <view class="button" bindtap="openMask">生成海报</view>
+    <view class="button" bindtap="changebg">更换背景</view>
+  </view>
+  <!-- 保存显示效果图 -->
+  <view class='canvasWrap' hidden="{{!showCanvas}}">
+    <image class="resImg" bindlongtap="saveImg" src="{{canvasTemImg}}" mode="aspectFit" style="width:{{width}}px;height:{{height}}px"></image>
+    <view class="btnsBox">
+      <view class="button" bindtap="saveImg">保存到手机</view>
+      <view class="button" bindtap="disappearCanvas">关闭</view>
+    </view>
+  </view>
+  <!-- 画布 -->
+  <canvas class='maskCanvas' canvas-id="maskCanvas" style='width:{{canvasWidth}}px; height:{{canvasHeight}}px;'></canvas>
+</view>

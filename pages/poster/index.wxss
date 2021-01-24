@@ -1,0 +1,198 @@
+/* pages/tmp/index.wxss */
+
+page {
+  background: lightblue;
+}
+
+.contentWarp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+#box {
+  background: pink;
+  position: relative;
+  margin: 10px auto;
+}
+
+#imgView {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.touchWrap {
+  transform-origin: center;
+  position: absolute;
+  z-index: 100;
+}
+
+.imgWrap {
+  box-sizing: border-box;
+  width: 100%;
+  transform-origin: center;
+  float: left;
+  border: 5rpx transparent dashed;
+}
+
+.imgWrap image {
+  float: left;
+}
+
+.touchActive .x {
+  display: block;
+}
+
+.touchActive .o {
+  display: block;
+}
+
+.x {
+  position: absolute;
+  top: -25rpx;
+  left: -25rpx;
+  z-index: 500;
+  display: none;
+  width: 50rpx;
+  height: 50rpx;
+  overflow: hidden;
+  font-weight: bold;
+  color: #d1e3f1;
+}
+
+.o {
+  position: absolute;
+  bottom: -25rpx;
+  right: -25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  display: none;
+  overflow: hidden;
+  font-weight: bold;
+  color: #d1e3f1;
+}
+
+.active {
+  background-color: rgb(78, 114, 151);
+}
+
+.active view {
+  border: none;
+}
+
+.touchActive {
+  z-index: 400;
+  padding: 3rpx;
+}
+
+.btnsBox {
+  margin-top: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btnsBox>view {
+  border-radius: 10rpx;
+  width: 200rpx;
+  letter-spacing: 5rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  margin-bottom: 46rpx;
+  font-size: 30rpx;
+  background: #d7e362;
+  color: #11506e;
+  font-weight: bold;
+}
+
+.canvasWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  text-align: center;
+}
+
+.maskCanvas {
+  position: absolute;
+  left: -200%;
+  top: 0;
+}
+
+.btnView view {
+  padding-bottom: 20rpx;
+}
+
+.hand {
+  position: absolute;
+  left: 100rpx;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+}
+
+.getUserInfoBtn {
+  position: initial;
+  border: none;
+  background-color: none;
+}
+
+.getUserInfoBtn::after {
+  border: none;
+}
+
+.btn_view {
+  display: flex;
+  padding: 20rpx;
+}
+
+.btn_view button {
+  width: 210rpx;
+  font-size: 28rpx;
+  background-color: #eb4985;
+  color: #fff;
+  line-height: 80rpx;
+}
+
+.resImg {
+  margin-top: 10px;
+}
+
+/* 特效样式 */
+
+.fliters {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 382rpx;
+  right: 120rpx;
+  z-index: 201;
+}
+
+.shapes {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 242rpx;
+  right: 120rpx;
+  z-index: 201;
+}
+
+.fliters image, .shapes image {
+  width: 60rpx;
+  height: 60rpx;
+  border: 2rpx solid #eb4985;
+}
